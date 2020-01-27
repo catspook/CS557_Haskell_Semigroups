@@ -1,0 +1,22 @@
+Test suite spec: RUNNING...
+
+problem 1
+  Semigroup <> for "Maybe" is associative
+    +++ OK, passed 100 tests.
+  Semigroup <> for "These" is associative
+    +++ OK, passed 100 tests.
+  Semigroup <> for "a -> b" is associative
+    +++ OK, passed 100 tests.
+problem 2
+  Semigroup <> for "BinTree" is associative
+    +++ OK, passed 100 tests.
+  Eq == for "BinTree" respects index-wise inequality
+    +++ OK, passed 100 tests; 18 discarded.
+problem 3
+  sconcat distributes over <>
+    +++ OK, passed 100 tests.
+
+Finished in 0.5043 seconds
+6 examples, 0 failures
+Test suite spec: PASS
+Test suite logged to: /Users/spooky/Documents/fp/hw2/dist-newstyle/build/x86_64-osx/ghc-8.6.5/hw2-0.1.0.0/t/spec/test/hw2-0.1.0.0-spec.log
