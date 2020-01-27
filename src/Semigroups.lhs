@@ -386,6 +386,40 @@ If you want to reference an image, submit the image along with this file on D2L
 in a standard format and reference it by filename.
 
 Write your answer in the space below this text.
+-----------------
+MY ANSWER:
+
+It does hold, as long as our assumptions are met (ie, 'a' is a lawful semigroup and 
+'t' is a terminating BinTree of type 'a'.) This is because of the nature of sconcat, 
+and the fact that 'balance' does not change the order of any leaves.
+
+First, 'sconcat' operates on the Leaves of a BinTree only, not the Nodes,
+in a left-to-right manner--this makes sense, as the Nodes of a BinTree basically only 
+act to show how deeply a certain Leaf is nested in the BinTree.
+
+Therefore, 'sconcat t' is only equal to 'sconcat (balance t)' if and only if '(balance t)' 
+leaves the Leaves of the BinTree in place, so that a left-to-right traversal of 't' and 
+'balance t' would yield the same result. 
+
+We can prove that 'balance' acts in such a fasion: 
+
+'balance' takes a BinTree as input and calls 'leaves' on it, which returns a nonempty list
+of the leaves in the BinTree in left-to-right order. It then feeds this list into 
+'balancedTree'. 
+
+'balancedTree' takes this list, and recursively creates a full BinTree out of it, balancing 
+the tree as it goes. It does this by taking the midpoint of the list, splitting the
+list at this point, and then treating the first created List as the left branch of the 
+Node and and the second created list as the right branch of the Node. It will recurse on each 
+sub-list until it contains only a single Leaf, in left-to-right order. 
+
+What is important to remember during this process is that 'balancedTree' is *creating a 
+new BinTree in left-to-right order from a list of Leaves, which itself was made by adding 
+Leaves from a BinTree to a list in left-to-right order*. That means that the order of the 
+Leaves remains unchanged throughout this process, and that only their level of nesting 
+changes--which, as was noted above, sconcat ignores.
+
+Therefore, 'sconcat t' and 'sconcat (balance t)' would have the same result.
 
 
 *****************
