@@ -185,7 +185,6 @@ b.
 >   That x <> a = That x 
 >   a <> That x = That x 
 >   These x y <> a = These x y
->   a <> These x y = These x y
 
 
 c.
@@ -196,9 +195,6 @@ should satisfy the associativity law when "f == g" over functions f/g means
 
 > instance Semigroup b => Semigroup (a -> b) where
 >   f <> b = f
->   b <> f = f
->   g <> b = g
->   b <> g = g
 
 
 
